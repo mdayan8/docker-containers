@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker Containers"
+  short_description: "Containerize apps with Docker and Compose"
+  default_prompt: "Use $docker-containers to containerize an app, add Compose, or debug a failing container setup."
