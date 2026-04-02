@@ -4,10 +4,23 @@
 
 Use it when you want an agent to handle the repetitive parts of container work correctly on the first pass: `Dockerfile`, `.dockerignore`, Compose, startup commands, image size, caching, ports, volumes, and container debugging.
 
+## More Awesome Collections For Developers
+
+- Claude Code Subagents
+- Codex Subagents
+- OpenClaw Skills
+- AI Agent Papers
+
+## Follow
+
+- X: [@mdayan24X](https://x.com/mdayan24X)
+
 ## Table of Contents
 
 - [Compatibility](#compatibility)
 - [What It Covers](#what-it-covers)
+- [More Awesome Collections For Developers](#more-awesome-collections-for-developers)
+- [Follow](#follow)
 - [Install](#install)
 - [Example Requests](#example-requests)
 - [Repository Structure](#repository-structure)
