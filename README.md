@@ -1,20 +1,49 @@
 # docker-containers
 
-`docker-containers` is an agent-agnostic skill for building, fixing, and hardening Docker setups for real apps. It works with agents that load local skill folders, including Codex, Claude Code, Warp, Antigravity, and similar tools. It is designed to help agents handle the repetitive parts of container work correctly on the first pass: `Dockerfile`, `.dockerignore`, Compose, startup commands, image size, caching, ports, volumes, and container debugging.
+`docker-containers` is an agent-agnostic skill for building, fixing, and hardening Docker setups for real apps. It is designed for agents that load local skill folders, including Codex, Claude Code, Warp, Antigravity, Gemini CLI, Cursor, GitHub Copilot, and OpenCode.
 
-## What It Is For
+Use it when you want an agent to handle the repetitive parts of container work correctly on the first pass: `Dockerfile`, `.dockerignore`, Compose, startup commands, image size, caching, ports, volumes, and container debugging.
 
-Use this skill when you want an agent to:
+## Table of Contents
 
-- containerize a Node, Python, Go, or frontend app
-- add Postgres, Redis, or another dependency with Compose
-- fix a broken Docker build or startup failure
-- reduce image size and improve build cache behavior
-- make a container setup safer for production
+- [Compatibility](#compatibility)
+- [What It Covers](#what-it-covers)
+- [Install](#install)
+- [Example Requests](#example-requests)
+- [Repository Structure](#repository-structure)
+- [Contributing](#contributing)
+- [License](#license)
+- [Security Note](#security-note)
 
-## Why It Exists
+## Compatibility
 
-Docker work is usually not hard, but it is easy to get subtly wrong. This skill keeps the process small, practical, and repeatable. It favors official base images, multi-stage builds, `.dockerignore`, service-name DNS in Compose, and clean runtime defaults.
+| Agent | Common skill path | Notes |
+| --- | --- | --- |
+| Antigravity | `.agent/skills/` | Matches the skill folder layout used by Antigravity-style local skills. |
+| Claude Code | `.claude/skills/` | Works as a local Claude Code skill. |
+| Codex | `.codex/skills/` | Works in the Codex local skills directory. |
+| Cursor | `.cursor/skills/` | Works as a local Cursor skill. |
+| Gemini CLI | `.gemini/skills/` | Works as a local Gemini CLI skill. |
+| GitHub Copilot | `.github/skills/` | Works as a local Copilot skill. |
+| OpenCode | `.opencode/skills/` | Works as a local OpenCode skill. |
+| Warp | `.agents/skills/`, `.warp/skills/`, `.claude/skills/`, `.codex/skills/`, `.cursor/skills/`, `.gemini/skills/`, `.copilot/skills/`, `.factory/skills/`, `.github/skills/`, `.opencode/skills/` | Warp can discover skills from several project-local paths. |
+
+If your agent uses a different folder, point it to the repo with the install command below and set `SKILLS_DIR` accordingly.
+
+## What It Covers
+
+- containerizing Node, Python, Go, and frontend apps
+- adding Postgres, Redis, or other services with Compose
+- fixing broken Docker builds and startup failures
+- shrinking images and improving cache behavior
+- making a container setup safer for production
+
+The skill stays narrow on purpose:
+
+- it does not invent Kubernetes unless the task needs Kubernetes
+- it does not add extra layers or tools unless they solve a real problem
+- it keeps changes reviewable and easy to undo
+- it preserves the app's current run behavior unless the request says otherwise
 
 ## Install
 
@@ -36,22 +65,28 @@ Use the skill for requests like:
 - `Add Redis to my Compose file and wire the app to it correctly`
 - `Make this Docker setup production-safe without changing app behavior`
 
-## What To Expect
-
-The skill stays narrow on purpose:
-
-- it does not invent Kubernetes unless the task needs Kubernetes
-- it does not add extra layers or tools unless they solve a real problem
-- it keeps changes reviewable and easy to undo
-- it preserves the app's current run behavior unless the request says otherwise
-
-## Skill Contents
+## Repository Structure
 
 - `SKILL.md` contains the trigger rules and workflow
+- `agents/openai.yaml` contains the UI-facing metadata used by Codex-style tooling
 - `references/examples.md` contains concrete Dockerfile and Compose starters
 - `references/recipes.md` contains stack-specific patterns
 - `references/troubleshooting.md` contains common failure modes and fixes
 
-## Maintenance Rule
+## Contributing
 
-Keep the skill small, reliable, and easy to maintain. Add new guidance only when it helps Codex make a better decision repeatedly.
+Keep changes small and specific.
+
+- add new guidance only when it helps the skill make better Docker decisions repeatedly
+- prefer concrete examples over broad theory
+- keep the README human-readable and easy to scan
+- keep the skill focused on Docker and Compose rather than platform sprawl
+
+## License
+
+MIT License.
+
+## Security Note
+
+This repository is meant to be reviewed before use in production environments.
+Container skills can influence build commands, environment handling, and runtime defaults, so treat them as operational code rather than decorative documentation.
