@@ -1,10 +1,10 @@
 # docker-containers
 
-`docker-containers` is a Codex skill for building, fixing, and hardening Docker setups for real apps. It is designed to help agents handle the repetitive parts of container work correctly on the first pass: `Dockerfile`, `.dockerignore`, Compose, startup commands, image size, caching, ports, volumes, and container debugging.
+`docker-containers` is an agent-agnostic skill for building, fixing, and hardening Docker setups for real apps. It works with agents that load local skill folders, including Codex, Claude Code, Warp, Antigravity, and similar tools. It is designed to help agents handle the repetitive parts of container work correctly on the first pass: `Dockerfile`, `.dockerignore`, Compose, startup commands, image size, caching, ports, volumes, and container debugging.
 
 ## What It Is For
 
-Use this skill when you want Codex to:
+Use this skill when you want an agent to:
 
 - containerize a Node, Python, Go, or frontend app
 - add Postgres, Redis, or another dependency with Compose
@@ -18,13 +18,13 @@ Docker work is usually not hard, but it is easy to get subtly wrong. This skill 
 
 ## Install
 
-Copy this once into your Codex skills directory:
+Set `SKILLS_DIR` to the folder your agent uses for skills, then run this once:
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills" && git clone https://github.com/mdayan8/docker-containers.git "${CODEX_HOME:-$HOME/.codex}/skills/docker-containers"
+SKILLS_DIR="${SKILLS_DIR:-$HOME/.codex/skills}" && mkdir -p "$SKILLS_DIR" && git clone https://github.com/mdayan8/docker-containers.git "$SKILLS_DIR/docker-containers"
 ```
 
-If you already have the repo locally, copy the `docker-containers` folder into `${CODEX_HOME:-$HOME/.codex}/skills/`.
+If your agent uses a different skill directory, change `SKILLS_DIR` to that path.
 
 ## Example Requests
 

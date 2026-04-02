@@ -1,6 +1,6 @@
 ---
 name: docker-containers
-description: Build, repair, and harden Docker-based development and deployment setups for applications and services. Use when Codex needs to create or update `Dockerfile`, `.dockerignore`, `compose.yaml` or `docker-compose.yml`, container entrypoints, multi-stage builds, local service orchestration, or container debugging workflows. Trigger for requests such as containerizing a Node/Python/Go app, adding Postgres or Redis with Compose, shrinking images, fixing container startup failures, debugging port or volume issues, improving Docker caching, or making a container setup safer for production.
+description: Build, repair, and harden Docker-based development and deployment setups for applications and services. Use when any agent needs to create or update `Dockerfile`, `.dockerignore`, `compose.yaml` or `docker-compose.yml`, container entrypoints, multi-stage builds, local service orchestration, or container debugging workflows. Trigger for requests such as containerizing a Node/Python/Go app, adding Postgres or Redis with Compose, shrinking images, fixing container startup failures, debugging port or volume issues, improving Docker caching, or making a container setup safer for production.
 ---
 
 # Docker Containers
