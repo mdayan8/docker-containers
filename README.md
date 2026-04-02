@@ -21,7 +21,7 @@ Docker work is usually not hard, but it is easy to get subtly wrong. This skill 
 Copy this once into your Codex skills directory:
 
 ```bash
-mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills" && git clone https://github.com/<your-org>/docker-containers.git "${CODEX_HOME:-$HOME/.codex}/skills/docker-containers"
+mkdir -p "${CODEX_HOME:-$HOME/.codex}/skills" && git clone https://github.com/mdayan8/docker-containers.git "${CODEX_HOME:-$HOME/.codex}/skills/docker-containers"
 ```
 
 If you already have the repo locally, copy the `docker-containers` folder into `${CODEX_HOME:-$HOME/.codex}/skills/`.
