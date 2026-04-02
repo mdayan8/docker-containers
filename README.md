@@ -1,6 +1,20 @@
 # docker-containers
 
+<p align="center">
+  <img src="assets/banner.svg" alt="docker-containers banner" width="960" />
+</p>
+
 `docker-containers` is an agent-agnostic skill for building, fixing, and hardening Docker setups for real apps. It is designed for agents that load local skill folders, including Codex, Claude Code, Warp, Antigravity, Gemini CLI, Cursor, GitHub Copilot, and OpenCode.
+
+<p align="center">
+  <img alt="Docker" src="https://img.shields.io/badge/topic-docker%20%26%20compose-2496ED?logo=docker&logoColor=white" />
+  <img alt="Agents" src="https://img.shields.io/badge/agents-multi--agent%20skill-111827?logo=github&logoColor=white" />
+  <img alt="X" src="https://img.shields.io/badge/follow-%40mdayan24X-000000?logo=x&logoColor=white" />
+</p>
+
+<p align="center">
+  <img src="assets/logo.svg" alt="docker-containers logo" width="144" />
+</p>
 
 Use it when you want an agent to handle the repetitive parts of container work correctly on the first pass: `Dockerfile`, `.dockerignore`, Compose, startup commands, image size, caching, ports, volumes, and container debugging.
 
